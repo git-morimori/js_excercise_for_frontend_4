@@ -21,7 +21,7 @@
       todos.push(todoItemText);
       showTodos();
     }
-  })
+  });
 
   // 「todos」の中身を一覧表示する
   //    - ul要素にli要素を追加して、li要素内にtodoタスクの内容を表示する
@@ -41,8 +41,7 @@
       const deleteButton = document.createElement('button');
       deleteButton.textContent = '削除';
       deleteButton.addEventListener('click', (event) => {
-        todoItem.parentElement.removeChild(todoItem);
-        deleteTodos(index);
+        deleteTodos(index);        
       });
       todoItem.appendChild(deleteButton);
     });
@@ -54,6 +53,7 @@
   //   - 削除後はshowTodosを実行して、Todoリストを整理する
   function deleteTodos(index) {
     todos.splice(index, 1);
+    showTodos();
   }
 
 })();
